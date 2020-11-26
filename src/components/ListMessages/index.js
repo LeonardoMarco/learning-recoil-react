@@ -1,10 +1,11 @@
 import React from 'react'
+import './style.scss'
 
 function ListMessages(props) {
   return (
-    <div>
+    <div className='box-messages'>
       {props.messages.map((message) => (
-        <h1>{message}</h1>
+        <div className="message">{message}</div>
       ))}
     </div>
   )

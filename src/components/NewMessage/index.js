@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './style.scss'
 
 function NewMessage(props) {
   const [value, setValue] = useState('')
@@ -11,11 +12,14 @@ function NewMessage(props) {
   }
 
   return (
-    <form onSubmit={(e) => onSubmitForm(e)}>
-      <input
+    <form onSubmit={(e) => onSubmitForm(e)} className="new-message">
+      <textarea
         type='text'
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        maxLength="350"
+        placeholder="Hello my friend"
+        onKeyDown={(e) => e.keyCode === 13 && onSubmitForm(e)}
       />
       <button type='submit'>Enviar</button>
     </form>

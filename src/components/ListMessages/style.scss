@@ -1,0 +1,18 @@
+.box-messages {
+  background: #f2fbfa;
+  width: 70vh;
+  max-width: 70vh;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+
+  .message {
+    padding: 15px 10px;
+    border-bottom: solid 1px #dadada;
+    font-size: 14px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.new-message {
+  background: #f2fbfa;
+  margin-top: 40px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70vh;
+
+  textarea {
+    width: 84%;
+    border: none;
+    padding: 15px;
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    height: 40px;
+    background: #9adfc5;
+    border: none;
+    border-radius: 50px;
+    width: 15%;
+    margin-left: 1%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

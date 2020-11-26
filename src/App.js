@@ -1,4 +1,6 @@
 import { useRecoilValue, useRecoilState } from 'recoil'
+
+import './main.scss'
 import NewMessage from './components/NewMessage'
 import ListMessages from './components/ListMessages'
 
