@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRecoilValue, useRecoilState } from 'recoil'
+import NewMessage from './components/NewMessage'
+import ListMessages from './components/ListMessages'
+
+import { currentMessagesState } from './recoil/atoms'
+import { messagesCountState } from './recoil/selectors'
 
 function App() {
+  const messagesCount = useRecoilValue(messagesCountState)
+  const [currentMessages, setCurrentMessages] = useRecoilState(
+    currentMessagesState,
+  )
+
+  function addNewMessage(message) {
+    setCurrentMessages([...currentMessages, message])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewMessage addNewMessage={(message) => addNewMessage(message)} />
+      <ListMessages messages={currentMessages} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
